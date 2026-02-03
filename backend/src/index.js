@@ -11,7 +11,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const schema = fs.readFileSync(path.join(__dirname, 'db', 'schema.sql'), 'utf-8');
 db.exec(schema);
 
-const server = app.listen(config.port, () => {
+const server = app.listen(config.port, '127.0.0.1', () => {
   console.log(`Board Room API running on port ${config.port}`);
   console.log(`Environment: ${config.nodeEnv}`);
 });
